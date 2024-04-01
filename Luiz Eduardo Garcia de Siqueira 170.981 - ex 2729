@@ -1,0 +1,84 @@
+//Luiz Eduardo Garcia de Siqueira 170.981
+//Beecrowd 2729 - Lista de Compras
+
+#include <stdio.h>
+#include <string.h>
+
+// Declaração lista de compras
+typedef struct {
+    char compra[21];  //cada item 
+} lista;
+
+// ordenar por item inserido
+void insertion(lista *listaCompras, unsigned short tam);
+
+int main() {
+    unsigned short casos, i, j;
+    lista listaCompras[1010];  //string para lista
+    char itens[20010], *cadaItem;  // itens temporarios
+
+    
+    scanf("%hu", &casos);
+
+    while (casos--) {
+        
+        scanf(" %[^\n]", itens);
+
+        i = 0;
+        cadaItem = strtok(itens, " ");  // separar string em palavras separadas
+        strcpy(listaCompras[i++].compra, cadaItem);  // Copia o primeiro item para a lista de compras
+
+        do {
+            cadaItem = strtok(NULL, " ");  // Continua a separacao para o restante
+            if (cadaItem == NULL)
+                break;
+
+            strcpy(listaCompras[i].compra, cadaItem);  
+            i++;
+        } while (cadaItem);
+
+        // ordenar lista
+        insertion(listaCompras, i);
+
+        // Imprime os itens ordenados sem repetições
+        for (j = 0; j < i; j++) {
+            if (j == 0 || strcmp(listaCompras[j].compra, listaCompras[j - 1].compra) != 0) {
+                if (j != 0)
+                    printf(" ");
+
+                printf("%s", listaCompras[j].compra);
+            }
+        }
+
+        printf("\n");
+
+        // limpar lista e string
+        for (j = 0; j < i; j++) {
+            memset(listaCompras[j].compra, 0, sizeof(listaCompras[j].compra));
+        }
+
+        memset(itens, 0, sizeof(itens));
+    }
+
+    return 0;
+}
+
+// odernar por item inserido
+void insertion(lista *listaCompras, unsigned short tam) {
+    short i = 1, j;
+    lista pivo;
+
+    while (i < tam) {
+        j = i - 1;
+        pivo = listaCompras[i];
+
+        
+        while (j >= 0 && strcmp(listaCompras[j].compra, pivo.compra) > 0) {
+            listaCompras[j + 1] = listaCompras[j];
+            j--;
+        }
+
+        listaCompras[j + 1] = pivo;  // ajustar posicao
+        i++;
+    }
+}
