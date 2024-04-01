@@ -1,0 +1,98 @@
+//Luiz Eduardo Garcia de Siqueira 170.981
+//Beecrowd 3160 - Lista de Compras
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct Amigo {
+    char nome[50];
+    struct Amigo *prox;
+};
+
+// Função para criar um novo amigo
+struct Amigo* criarAmigo(char nome[]) {
+    struct Amigo *novoAmigo = (struct Amigo*)malloc(sizeof(struct Amigo));
+    if (novoAmigo != NULL) {
+        strcpy(novoAmigo->nome, nome);
+        novoAmigo->prox = NULL;
+    }
+    return novoAmigo;
+}
+
+// Função para adicionar um amigo à lista
+void adicionarAmigo(struct Amigo **lista, char nome[]) {
+    struct Amigo *novo = criarAmigo(nome);
+    if (*lista == NULL) {
+        *lista = novo;
+    } else {
+        struct Amigo *temp = *lista;
+        while (temp->prox != NULL) {
+            temp = temp->prox;
+        }
+        temp->prox = novo;
+    }
+}
+
+// Função para atualizar a lista de amigos de acordo com a entrada
+void atualizarListaAmigos(struct Amigo **listaAtual, char novaLista[], char amigoIndicado[]) {
+    char *token = strtok(novaLista, " ");
+    while (token != NULL) {
+        adicionarAmigo(listaAtual, token);
+        token = strtok(NULL, " ");
+    }
+
+    // Verifica se há indicação de amigo para atualizar a lista
+    if (strcmp(amigoIndicado, "nao") != 0) {
+        struct Amigo *novoInicio = NULL;
+        struct Amigo *temp = *listaAtual;
+        while (temp != NULL) {
+            if (strcmp(temp->nome, amigoIndicado) == 0) {
+                token = strtok(novaLista, " ");
+                while (token != NULL) {
+                    adicionarAmigo(&temp, token);  // Adiciona os novos amigos antes do amigo indicado
+                    token = strtok(NULL, " ");
+                }
+                break;
+            }
+            novoInicio = temp;
+            temp = temp->prox;
+        }
+    }
+}
+
+// Função para exibir a lista de amigos
+void exibirListaAmigos(struct Amigo *lista) {
+    struct Amigo *temp = lista;
+    while (temp != NULL) {
+        printf("%s ", temp->nome);
+        temp = temp->prox;
+    }
+    printf("\n");
+}
+
+int main() {
+    struct Amigo *listaAtual = NULL;
+    char listaAmigos[500];
+    char novaLista[500];
+    char amigoIndicado[50];
+
+    // Entrada de dados
+    fgets(listaAmigos, sizeof(listaAmigos), stdin);
+    listaAmigos[strcspn(listaAmigos, "\n")] = '\0';
+
+    fgets(novaLista, sizeof(novaLista), stdin);
+    novaLista[strcspn(novaLista, "\n")] = '\0';
+
+    fgets(amigoIndicado, sizeof(amigoIndicado), stdin);
+    amigoIndicado[strcspn(amigoIndicado, "\n")] = '\0';
+
+    // Atualiza a lista de amigos
+    atualizarListaAmigos(&listaAtual, novaLista, amigoIndicado);
+
+    // Exibe a nova lista de amigos
+    exibirListaAmigos(listaAtual);
+
+    return 0;
+}
