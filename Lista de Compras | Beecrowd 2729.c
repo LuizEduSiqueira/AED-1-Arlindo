@@ -1,3 +1,4 @@
+//Luiz Eduardo garcia de Siqueira 170981 - AED1 2024.1 - Beecrowd Lista de Compras 2729
 //bibliotecas
 #include <stdio.h>
 #include <stdlib.h>
