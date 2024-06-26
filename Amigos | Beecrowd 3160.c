@@ -1,4 +1,6 @@
 //Luiz Eduardo garcia de Siqueira 170981 - AED1 2024.1 - Beecrowd Amigos 3160
+
+//Bibliotecas
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -98,11 +100,6 @@ int main() {
       token = strtok(lista_N, " ");
       while (token != NULL) {
         lista *novo = (lista *)malloc(sizeof(lista));
-        if (novo == NULL) {
-          fprintf(stderr, "Erro ao alocar memória.\n");
-          liberar_lista(head);
-          return EXIT_FAILURE;
-        }
         strcpy(novo->nome, token);
         novo->prox = amigo->prox;
         amigo->prox = novo;
