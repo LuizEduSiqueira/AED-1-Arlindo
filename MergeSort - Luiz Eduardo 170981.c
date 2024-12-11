@@ -1,4 +1,4 @@
-/*Luiz eduardo garcia de Siqueira 170981 turma NA
+/*Luiz Eduardo Garcia de Siqueira 170981 turma NA
 AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
@@ -49,7 +49,7 @@ void intercalar(int arr[], int left, int mid, int right) {
     }
 }
 
-// Função do MergeSortR
+// Função do MergeSort
 void mergeSort(int arr[], int left, int right) {
     if (left < right) {
         int mid = left + (right - left) / 2;
@@ -63,13 +63,6 @@ void mergeSort(int arr[], int left, int right) {
     }
 }
 
-// Função para imprimir o array
-void printArray(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
 
 int main() {
     int n;
@@ -78,29 +71,32 @@ int main() {
     printf("Digite o tamanho do vetor: ");
     scanf("%d", &n);
 
-    if (n <= 0) {
-        printf("O tamanho do vetor deve ser maior que 0.\n");
-        return 1;
-    }
-
     int arr[n];
-
-    // Inicializa o gerador de números aleatórios
     srand(time(NULL));
 
-    // Preenche o vetor com números aleatórios entre 0 e n-1
-    for (int i = 0; i < n; i++) {
-        arr[i] = rand() % n;
+    double totalTime = 0;
+
+    for (int exec = 0; exec < 5; exec++) {
+        // Preenche o vetor com números aleatórios entre 0 e n-1
+        for (int i = 0; i < n; i++) {
+            arr[i] = rand() % n;
+        }
+
+        printf("Execução %d: Array gerado:\n", exec + 1);
+
+        // Mede o tempo do Merge Sort
+        clock_t start = clock();
+        mergeSort(arr, 0, n - 1);
+        clock_t end = clock();
+
+        double timeTaken = (double)(end - start) / CLOCKS_PER_SEC;
+        totalTime += timeTaken;
+
+        printf("Array ordenado:\n");
+        printf("Tempo da execução %d: %.5f segundos\n\n", exec + 1, timeTaken);
     }
 
-    printf("Array gerado:\n");
-    printArray(arr, n);
-
-    // Ordena o array usando Merge Sort
-    mergeSort(arr, 0, n - 1);
-
-    printf("Array ordenado:\n");
-    printArray(arr, n);
+    printf("Tempo médio de 5 execuções: %.5f segundos\n", totalTime / 5);
 
     return 0;
 }
