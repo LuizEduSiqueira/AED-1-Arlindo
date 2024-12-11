@@ -1,6 +1,3 @@
-/*Luiz eduardo garcia de Siqueira 170981 turma NA
-AED 1 Prof. Arlindo - 2024.2*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -19,44 +16,49 @@ void insertionSort(int arr[], int n) {
     }
 }
 
-// Print Array
-void printArray(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
 
 int main() {
     int n;
+    int numExecucoes = 5;
+    double tempoTotal = 0;
 
     // Lê o tamanho do vetor
     printf("Digite o tamanho do vetor: ");
     scanf("%d", &n);
 
-    if (n <= 0) {
-        printf("O tamanho do vetor deve ser maior que 0.\n");
-        return 1;
-    }
 
     int arr[n];
 
     // Inicializa o gerador de números aleatórios
     srand(time(NULL));
 
-    // Preenche o vetor com números aleatórios entre 0 e n-1
-    for (int i = 0; i < n; i++) {
-        arr[i] = rand() % n;
+    // Executa a ordenação 5 vezes
+    for (int i = 0; i < numExecucoes; i++) {
+        // Preenche o vetor com números aleatórios entre 0 e n-1
+        for (int j = 0; j < n; j++) {
+            arr[j] = rand() % n;
+        }
+
+        // Marca o início do tempo
+        clock_t tempoInicio = clock();
+
+        // Ordena o array
+        insertionSort(arr, n);
+
+        // Marca o fim do tempo
+        clock_t tempoFim = clock();
+
+        // Calcula o tempo de execução em segundos
+        double tempoExecucao = ((double)(tempoFim - tempoInicio)) / CLOCKS_PER_SEC;
+        tempoTotal += tempoExecucao;
+
+        // Exibe o tempo de execução de cada iteração
+        printf("Tempo de execução da %dª execução: %.6f segundos\n", i + 1, tempoExecucao);
     }
 
-    printf("Array gerado:\n");
-    printArray(arr, n);
-
-    // Ordena o array
-    insertionSort(arr, n);
-
-    printf("Array ordenado:\n");
-    printArray(arr, n);
+    // Calcula o tempo médio de execução
+    double tempoMedio = tempoTotal / numExecucoes;
+    printf("\nTempo médio de execução (5 execuções): %.6f segundos\n", tempoMedio);
 
     return 0;
 }
