@@ -1,5 +1,5 @@
-/*Luiz eduardo garcia de Siqueira 170981 turma NA
-AED 1 Prof. Arlindo - 2024.2*/
+/* Luiz Eduardo Garcia de Siqueira 170981 turma NA
+   AED 1 Prof. Arlindo - 2024.2 */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,12 +41,6 @@ void quickSortR(int arr[], int low, int high) {
     }
 }
 
-void printArray(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
 
 int main() {
     int n;
@@ -55,29 +49,37 @@ int main() {
     printf("Digite o tamanho do vetor: ");
     scanf("%d", &n);
 
-    if (n <= 0) {
-        printf("O tamanho do vetor deve ser maior que 0.\n");
-        return 1;
-    }
 
     int arr[n];
+    double total_time = 0.0;
 
     // Inicializa o gerador de números aleatórios
     srand(time(NULL));
 
-    // Preenche o vetor com números aleatórios entre 0 e n-1
-    for (int i = 0; i < n; i++) {
-        arr[i] = rand() % n;
+    for (int exec = 0; exec < 5; exec++) {
+        // Preenche o vetor com números aleatórios entre 0 e n-1
+        for (int i = 0; i < n; i++) {
+            arr[i] = rand() % n;
+        }
+
+        
+
+        // Mede o tempo de execução do Quick Sort
+        clock_t start = clock();
+        quickSortR(arr, 0, n - 1);
+        clock_t end = clock();
+
+        // Calcula o tempo de execução
+        double time_taken = ((double)(end - start)) / CLOCKS_PER_SEC;
+        total_time += time_taken;
+
+        printf("Execução %d - Array ordenado:\n", exec + 1);
+        printf("Tempo de execução: %.6f segundos\n\n", time_taken);
     }
 
-    printf("Array gerado:\n");
-    printArray(arr, n);
-
-    // Ordena o array usando Quick Sort
-    quickSortR(arr, 0, n - 1);
-
-    printf("Array ordenado:\n");
-    printArray(arr, n);
+    // Calcula e exibe o tempo médio
+    double average_time = total_time / 5.0;
+    printf("Tempo médio de execução em 5 execuções: %.6f segundos\n", average_time);
 
     return 0;
 }
