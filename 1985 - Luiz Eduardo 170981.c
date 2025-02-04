@@ -9,7 +9,7 @@ double valor(int id){
 	else if (id==1004){return 4.5;}
     else if (id==1005){return 5.5;}
 }
-main(){
+int main(){
 	int p,q,id,i;
     double soma=0;
     scanf("%d",&p);
@@ -19,4 +19,4 @@ main(){
         soma+=(q*(valor(id)));
     }
     printf("%.2lf\n",soma);
-system("pause");}
+return 0;}
