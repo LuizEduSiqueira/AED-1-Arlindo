@@ -4,7 +4,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 #include <stdio.h>
 #include <stdlib.h>
 
-main()
+int main()
 {
     long int numero;
     int quant, i;
@@ -22,5 +22,5 @@ main()
             printf("9\n");
         }
     }
-    system("pause");
+    return 0;
 }
