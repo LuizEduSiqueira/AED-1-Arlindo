@@ -2,7 +2,7 @@
 AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
-main(){
+int main(){
 	int quantidade,n,i;
 	scanf("%d",&quantidade);
 	for (i=0;i<quantidade;i++){
@@ -14,4 +14,4 @@ main(){
             printf("1\n");
         }
     }
-system("pause");}
+return 0;}
