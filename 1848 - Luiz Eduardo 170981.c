@@ -3,7 +3,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
 #include <string.h>
-main(){ 
+int main(){ 
     char piscada[10];
     int loteria,i,contador=3;
     for(i=0;i<3;i++){
@@ -25,4 +25,4 @@ main(){
         }
         printf("%d\n",loteria);
     }
-system("pause");}
+return 0;}
