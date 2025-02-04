@@ -2,7 +2,7 @@
 AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
-main(){
+int main(){
 	int h, min;
 	while(scanf("%d:%d",&h,&min)!=EOF){
 	    if (h>=5 && h<=6){
@@ -18,4 +18,4 @@ main(){
             printf("Atraso maximo: %d\n",(120+min));
         }
 	}
-system("pause");}
+return 0;}
