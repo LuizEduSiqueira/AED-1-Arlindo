@@ -32,7 +32,7 @@ void sortinsert_name(Kidlist *vet, int size)
     }
 }
 
-main()
+int main()
 {
     int size, aux, counterGood = 0, CounterPoor = 0, i = 0, j;
     char behavior;
@@ -63,5 +63,5 @@ main()
     }
 
     printf("Se comportaram: %d | Nao se comportaram: %d\n", counterGood, CounterPoor);
-    system("pause");
+    return 0;
 }
