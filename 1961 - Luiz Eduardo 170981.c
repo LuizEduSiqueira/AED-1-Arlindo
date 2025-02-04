@@ -3,7 +3,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
 #include <stdlib.h>
-main(){
+int main(){
     int pulo_sapo,num_canos,num_canost,tam_cano,anterior,sim_p=0,i; 
 
 		scanf("%d",&pulo_sapo);scanf("%d",&num_canos);
@@ -29,4 +29,4 @@ main(){
     else{
 		printf("GAME OVER\n");
 	}	 
-system("pause");}
+return 0;}
