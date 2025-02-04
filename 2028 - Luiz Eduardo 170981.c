@@ -10,7 +10,7 @@ int contagem(int num){
     }
     return ++soma; /* > Somar antes "++$" < */
 }
-main(){
+int main(){
     int N,i,j,k=0,c,aux;
         while (scanf("%d",&N)!=EOF){
             if(N==0){
@@ -31,4 +31,4 @@ main(){
             }
             printf("\n\n");
         }
-system("pause");}
+return 0;}
