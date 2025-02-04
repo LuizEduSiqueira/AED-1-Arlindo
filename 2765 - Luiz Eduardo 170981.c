@@ -4,7 +4,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 #include <stdio.h>
 #include <string.h>
 #include <strings.h>
-main(){
+int main(){
     int i;
     char frase[128];
     while(gets(frase)){
@@ -18,4 +18,4 @@ main(){
         }
         printf("\n");
     }
-system("pause");}
+return 0;}
