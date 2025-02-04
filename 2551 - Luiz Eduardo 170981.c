@@ -3,7 +3,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
 #include <stdlib.h>
-main()
+int main()
 {
     double x, y, medias[31];
     int n, i;
@@ -26,5 +26,5 @@ main()
             }
         }
     }
-    system("pause");
+   return 0;
 }
