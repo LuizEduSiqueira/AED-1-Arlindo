@@ -2,7 +2,7 @@
 AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
-main(){
+int main(){
 	int m,a,b,fi_damonica;
     scanf("%d",&m);scanf("%d",&a);scanf("%d",&b);
         fi_damonica=m-(a+b);
@@ -15,4 +15,4 @@ main(){
     else{
         printf("%d\n",b);
     }
-system("pause");}
+return 0;}
