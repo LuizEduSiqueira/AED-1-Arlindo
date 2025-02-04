@@ -136,5 +136,5 @@ int main()
             Print(&pilha);
         }
     }
-    system("pause");
+    return 0;
 }
