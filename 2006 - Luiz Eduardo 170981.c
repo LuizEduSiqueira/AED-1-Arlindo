@@ -2,7 +2,7 @@
 AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
-main(){
+int main(){
     int t,respostas[5],contador=0,i;
         scanf("%d",&t);
     for (i=0;i<5;i++){
@@ -12,4 +12,4 @@ main(){
         }
     }
     printf("%d\n",contador);
-system("pause");}
+return 0;}
