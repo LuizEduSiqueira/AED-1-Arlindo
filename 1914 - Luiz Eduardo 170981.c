@@ -3,7 +3,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
 #include <string.h>
-main(){
+int main(){
 	int quantidade,num_1,num_2,soma,i;
     char nome_1[1001],nome_2[1001],escolha_1[1001],escolha_2[1001];
     scanf("%d",&quantidade);
@@ -19,4 +19,4 @@ main(){
             printf("%s\n",nome_2);
         }
     }
-system("pause");}
+return 0;}
