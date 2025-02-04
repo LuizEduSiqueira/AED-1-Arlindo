@@ -28,10 +28,10 @@ void amanco(int a,int b,int c){
         printf(":(\n");
     }
 }
-main(){
+int main(){
     int a,b,c;
 
     scanf("%d",&a);scanf("%d",&b);scanf("%d",&c);
     amanco(a,b,c);
 
-system("pause");}
+return 0;}
