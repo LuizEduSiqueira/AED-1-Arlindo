@@ -2,7 +2,7 @@
 AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
-main(){
+int main(){
     int c,i,newton;
     char nome[100];
     scanf("%d",&c);
@@ -15,4 +15,4 @@ main(){
             printf("N\n");
         }
     }
-system("pause");}
+return 0;}
