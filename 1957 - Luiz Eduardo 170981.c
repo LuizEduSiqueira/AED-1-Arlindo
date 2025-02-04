@@ -3,9 +3,9 @@ AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
 #include <stdlib.h>
-main(){ 
+int main(){ 
 	unsigned long int num;
     
     scanf("%ld",&num);
     printf("%lX\n",num); 
-system("pause");} 
+return 0;} 
