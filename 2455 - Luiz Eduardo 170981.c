@@ -4,7 +4,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 #include <stdio.h>
 #include <stdlib.h>
 
-main()
+int main()
 {
     int c1, c2, p1, p2;
     scanf("%d", &p1);
@@ -23,5 +23,5 @@ main()
     {
         printf("-1\n");
     }
-    system("pause");
+    return 0;
 }
