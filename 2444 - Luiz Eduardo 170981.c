@@ -4,7 +4,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 #include <stdio.h>
 #include <stdlib.h>
 
-main()
+int main()
 {
     int vol, trocas, volp, i;
     scanf("%d", &vol);
@@ -27,5 +27,5 @@ main()
         }
     }
     printf("%d\n", vol);
-    system("pause");
+    return 0;
 }
