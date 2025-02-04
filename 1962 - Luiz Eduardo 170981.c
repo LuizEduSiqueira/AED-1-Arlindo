@@ -3,7 +3,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
 #define ANO 2015
-main(){
+int main(){
     int quantidade,ano,i;
         scanf("%d",&quantidade);
     for (i=0;i<quantidade;i++){
@@ -19,4 +19,4 @@ main(){
             printf("%d D.C.\n",ano);
         }
     }
-system("pause");}
+return 0;}
