@@ -4,7 +4,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-main(){
+int main(){
     char p1[50], p2[50];
 	int N,i;
 	scanf("%d",&N);
@@ -31,4 +31,4 @@ main(){
             printf("Jogador 2 venceu\n");
         }
 	}
-system("pause");}
+return 0;}
