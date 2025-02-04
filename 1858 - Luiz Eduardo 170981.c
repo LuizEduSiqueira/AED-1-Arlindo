@@ -2,7 +2,7 @@
 AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
-main(){
+int main(){
     int n,t,i=1,posicao_m,resposta;
     scanf("%d",&n);
     while(i<=n){
@@ -18,4 +18,4 @@ main(){
         i++;
     }
     printf("%d\n",resposta);
-system("pause");}
+return 0;}
