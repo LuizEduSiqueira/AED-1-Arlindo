@@ -9,7 +9,7 @@ int pao_de_batata(int a,int b,int c){
     }
     return true;
 }
-main(){
+int main(){
 	int a,b,c,d;
     scanf("%d",&a);scanf("%d",&b);scanf("%d",&c);scanf("%d",&d);
     if(((pao_de_batata(a,b,c))==true)||((pao_de_batata(a,b,d))==true)||((pao_de_batata(a,d,c))==true)||((pao_de_batata(d,b,c))==true)){
@@ -18,4 +18,4 @@ main(){
     else{
         printf("N\n");
     }
-system("pause");}
+return 0;
