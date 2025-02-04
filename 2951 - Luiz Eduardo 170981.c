@@ -2,7 +2,7 @@
 AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
-main(){
+int main(){
     int  n,g,x,vi[100],i,j,soma=0;
     char ri[100], escolhidos;
         scanf("%d",&n);
@@ -27,4 +27,4 @@ main(){
     else{
         printf("My precioooous\n");
     }
-system("pause");}
+return 0;}
