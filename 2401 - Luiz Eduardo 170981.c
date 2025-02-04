@@ -4,7 +4,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 #include <stdio.h>
 #include <stdlib.h>
 
-main()
+int main()
 {
     int num, amount;
     double event = 1; // ((1/2)/3) × 6
@@ -27,5 +27,5 @@ main()
         }
     }
     printf("%.0lf\n", event);
-    system("pause");
+    return 0;
 }
