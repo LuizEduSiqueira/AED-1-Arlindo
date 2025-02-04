@@ -2,7 +2,7 @@
 AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
-main(){
+int main(){
 	double alt_placa,larg_placa,quantidade;
 	double alt_pci,larg_pci;
 	long long int i=0;
@@ -17,4 +17,4 @@ main(){
             }
 		}
 	}
-system("pause");}
+return 0;}
