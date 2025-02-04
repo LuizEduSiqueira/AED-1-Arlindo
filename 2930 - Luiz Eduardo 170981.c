@@ -2,7 +2,7 @@
 AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
-main(){ 
+int main(){ 
     int e,d;
     scanf("%d",&e);scanf("%d",&d);
     if ((e>d)){
@@ -17,4 +17,4 @@ main(){
 	else{
         printf("Parece o trabalho do meu filho!\nFail! Entao eh nataaaaal!\n");
     }
-system("pause");}
+return 0;}
