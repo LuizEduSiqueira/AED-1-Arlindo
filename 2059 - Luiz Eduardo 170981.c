@@ -3,7 +3,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
 #include <stdlib.h>
-main(){
+int main(){
 	int escolha,jogador_1,jogador_2,r,a,soma;
     scanf("%d",&escolha);scanf("%d",&jogador_1);scanf("%d",&jogador_2);scanf("%d",&r);scanf("%d",&a);
     soma=jogador_1+jogador_2;
@@ -30,4 +30,4 @@ main(){
             printf("Jogador 2 ganha!\n");
         }   
     }
-system("pause");}
+return 0;}
