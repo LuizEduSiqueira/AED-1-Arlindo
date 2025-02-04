@@ -5,7 +5,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 #include <stdlib.h>
 #include <math.h>
 
-main()
+int main()
 {
     unsigned long long int quantidade, i, c, d, aux = 0;
     scanf("%llu", &quantidade);
@@ -23,5 +23,5 @@ main()
             printf("%llu\n", aux);
         }
     }
-    system("pause");
+    return 0;
 }
