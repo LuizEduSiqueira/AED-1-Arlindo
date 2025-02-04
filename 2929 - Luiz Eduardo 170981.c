@@ -67,7 +67,7 @@ long long menor(Stack *pilha)
     return menor;
 }
 
-main()
+int main()
 {
     unsigned quant;
     char operation[20];
@@ -99,5 +99,5 @@ main()
                 printf("%lld\n", aux);
         }
     }
-    system("pause");
+    return 0;
 }
