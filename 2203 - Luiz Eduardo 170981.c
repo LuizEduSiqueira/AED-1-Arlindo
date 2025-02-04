@@ -5,7 +5,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-main()
+int main()
 {
     int Xf, Yf, Xi, Yi, Vi, R1, R2;
     double D1, D2;
@@ -23,5 +23,5 @@ main()
             printf("N\n");
         }
     }
-    system("pause");
+       return 0;
 }
