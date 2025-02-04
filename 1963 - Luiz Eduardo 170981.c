@@ -2,8 +2,8 @@
 AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
-main(){
+int main(){
     double a,b;
         scanf("%lf",&a);scanf("%lf",&b);
     printf("%.2lf%%\n",(((b-a)/a)*100));
-system("pause");}
+return 0;}
