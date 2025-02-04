@@ -3,7 +3,7 @@ AED 1 Prof. Arlindo - 2024.2*/
 
 #include <stdio.h>
 #include <stdlib.h>
-main(){
+int main(){
 	int s,t,f;
 		scanf("%d",&s);scanf("%d",&t);scanf("%d",&f);
         t=s+t+f;
@@ -12,4 +12,4 @@ main(){
             t=24+t;
         }
         printf("%d\n",(t%24));
-system("pause");}
+return 0;}
