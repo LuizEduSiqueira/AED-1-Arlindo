@@ -107,7 +107,7 @@ void insertionSort(List *list)
     }
 }
 
-main()
+int main()
 {
     List *lista = createList();
     DataNode data;
@@ -125,5 +125,5 @@ main()
     insertionSort(lista);
     printList(lista, (winstudent - 1));
 
-    system("pause");
+    return 0;
 }
