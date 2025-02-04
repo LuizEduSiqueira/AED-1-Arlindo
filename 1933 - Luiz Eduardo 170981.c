@@ -5,8 +5,8 @@ AED 1 Prof. Arlindo - 2024.2*/
 void maior(int a,int b){
     printf("%d\n",((a>b)?a:b));
 }
-main(){
+int main(){
 	int a,b;
     scanf("%d",&a);scanf("%d",&b);
     maior(a,b);
-system("pause");}
+return 0;}
