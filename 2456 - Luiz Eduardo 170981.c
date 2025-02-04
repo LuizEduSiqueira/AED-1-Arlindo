@@ -52,7 +52,7 @@ bool decrescente(int *vetor, int tamanho)
     }
 }
 
-main()
+int main()
 {
     int cartas[5], i;
 
@@ -73,5 +73,5 @@ main()
     {
         printf("N\n");
     }
-    system("pause");
+    return 0;
 }
